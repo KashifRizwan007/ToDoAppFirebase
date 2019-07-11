@@ -1,0 +1,6 @@
+framework module Pods_TodoAppFirestore {
+  umbrella header "Pods-TodoAppFirestore-umbrella.h"
+
+  export *
+  module * { export * }
+}
