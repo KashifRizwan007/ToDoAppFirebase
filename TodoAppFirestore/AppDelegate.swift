@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(userLoginStatus)
         {
             let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "InitialLoginViewController") as! InitialLoginViewController
+            let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "InitialScreenController") as! InitialViewController
             window!.rootViewController = centerVC
             window!.makeKeyAndVisible()
         }
