@@ -19,6 +19,7 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var refreshControl = UIRefreshControl()
     var boxView = UIView()
     var data:ToDo!
+    var DataListnerObj = DataListner()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +31,16 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
         self.refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.loadData()
-    }
-    
     @IBAction func signOut(_ sender: Any) {
         let alert = UIAlertController(title: "Sign Out", message: "Are you sure you want to Sign Out?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertAction.Style.default, handler: {(_) in
             do {
                 try Auth.auth().signOut()
-                self.navigationController?.popViewController(animated: true)
+                UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialLoginViewController") as! InitialLoginViewController
+                let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDel.window?.rootViewController = loginVC
             } catch let err {
                 let _alert = UIAlertController(title: "Alert", message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                 _alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -73,7 +74,7 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     @objc func loadData(){
-        dataGetSetObj.getData(completion: {(error, toDoData) in
+        DataListnerObj.getData(completion: {(error, toDoData) in
             DispatchQueue.main.async {
                 self.refreshControl.beginRefreshing()
                 if let err = error{

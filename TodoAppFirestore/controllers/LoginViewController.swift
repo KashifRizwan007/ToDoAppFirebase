@@ -57,7 +57,15 @@ class LoginViewController: UIViewController,setUserInfo {
                 }else{
                     let alert = UIAlertController(title: "Success", message: "You are logged into your account.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(_) in
-                        self.performSegue(withIdentifier: "fromLogin", sender: nil)
+                        let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "InitialScreenController") as! InitialViewController
+                        // setting the login status to true
+                        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                        UserDefaults.standard.synchronize()
+                        appDel.window!.rootViewController = centerVC
+                        appDel.window!.makeKeyAndVisible()
+                        //self.performSegue(withIdentifier: "fromLogin", sender: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }

@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
+        let userLoginStatus = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        
+        if(userLoginStatus)
+        {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerVC = mainStoryBoard.instantiateViewController(withIdentifier: "InitialLoginViewController") as! InitialLoginViewController
+            window!.rootViewController = centerVC
+            window!.makeKeyAndVisible()
+        }
         return true
     }
 

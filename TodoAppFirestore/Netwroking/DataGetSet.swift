@@ -12,25 +12,6 @@ import FirebaseAuth
 
 struct DataGetSet {
     let db = Firestore.firestore()
-    func getData (completion: @escaping (_ error: String? , _ toDoData:[ToDo]?) -> ()){
-        self.db.collection("users").document(Auth.auth().currentUser!.uid).collection("toDoList").getDocuments(completion: {(snapshot, error) in
-            if let err = error{
-                completion(err.localizedDescription,nil)
-            }else{
-                var DataArray = [ToDo]()
-                for documents in snapshot!.documents{
-                    if let date = documents.data()["date"] as? String, let detail = documents.data()["detail"] as? String, let title = documents.data()["title"] as? String{
-                        DataArray.append(ToDo(title: title, description: detail, date: date, uid: documents.documentID))
-                    }
-                }
-                if DataArray.count == 0{
-                    completion(nil,nil)
-                }else{
-                    completion(nil,DataArray)
-                }
-            }
-        })
-    }
     
     func addData(title: String, detail:String, completion: @escaping (_ error: String?) -> ()){
         let date = String(DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .long, timeStyle: .short))

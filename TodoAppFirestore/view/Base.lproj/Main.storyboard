@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="TodoAppFirestore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="TodoAppFirestore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,6 @@
                         <outlet property="loader" destination="e8i-c1-xsd" id="Atb-xx-2OV"/>
                         <outlet property="loginBtn" destination="XXq-85-iYD" id="vbm-XR-eJq"/>
                         <outlet property="password" destination="meg-hY-bPI" id="PSn-x6-uM6"/>
-                        <segue destination="gQM-6T-5u6" kind="show" identifier="fromLogin" id="xQT-IW-QxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -492,10 +491,10 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-244"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Initial Login View Controller-->
         <scene sceneID="duP-Bk-UtI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rKm-tk-gen" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitialLoginViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rKm-tk-gen" customClass="InitialLoginViewController" customModule="TodoAppFirestore" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHW-Uv-xWi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -605,7 +604,4 @@
     <resources>
         <image name="background.jpg" width="3000" height="2005"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xQT-IW-QxR"/>
-    </inferredMetricsTieBreakers>
 </document>

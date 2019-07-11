@@ -1,5 +1,5 @@
 //
-//  InitialViewController.swift
+//  InitialLoginViewController.swift
 //  TodoAppFirestore
 //
 //  Created by Kashif Rizwan on 7/11/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InitialViewController: UINavigationController {
+class InitialLoginViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

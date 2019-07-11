@@ -26,6 +26,8 @@
 		12EC56DF22D7112E0039563F /* EditToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC56DE22D7112E0039563F /* EditToDoViewController.swift */; };
 		12EC56E122D714CB0039563F /* DoneEditToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC56E022D714CB0039563F /* DoneEditToDoViewController.swift */; };
 		12EC56E522D733FA0039563F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC56E422D733FA0039563F /* InitialViewController.swift */; };
+		12EC56E722D741AB0039563F /* DataListner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC56E622D741AB0039563F /* DataListner.swift */; };
+		12EC56E922D7505C0039563F /* InitialLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EC56E822D7505C0039563F /* InitialLoginViewController.swift */; };
 		3F874DE7139D4EC02B02817A /* Pods_TodoAppFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CFE0E07212DF5D25AAD2183 /* Pods_TodoAppFirestore.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		12EC56DE22D7112E0039563F /* EditToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditToDoViewController.swift; sourceTree = "<group>"; };
 		12EC56E022D714CB0039563F /* DoneEditToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneEditToDoViewController.swift; sourceTree = "<group>"; };
 		12EC56E422D733FA0039563F /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		12EC56E622D741AB0039563F /* DataListner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListner.swift; sourceTree = "<group>"; };
+		12EC56E822D7505C0039563F /* InitialLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginViewController.swift; sourceTree = "<group>"; };
 		3C993A7CC282CE8A3329D60A /* Pods-TodoAppFirestore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppFirestore.release.xcconfig"; path = "Target Support Files/Pods-TodoAppFirestore/Pods-TodoAppFirestore.release.xcconfig"; sourceTree = "<group>"; };
 		9CFE0E07212DF5D25AAD2183 /* Pods_TodoAppFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoAppFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F12C67D5EA24338813CAF1 /* Pods-TodoAppFirestore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppFirestore.debug.xcconfig"; path = "Target Support Files/Pods-TodoAppFirestore/Pods-TodoAppFirestore.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				12EC56DE22D7112E0039563F /* EditToDoViewController.swift */,
 				12EC56E022D714CB0039563F /* DoneEditToDoViewController.swift */,
 				12EC56E422D733FA0039563F /* InitialViewController.swift */,
+				12EC56E822D7505C0039563F /* InitialLoginViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				12C6AD4722D5E2BA00BE9192 /* todo.swift */,
+				12EC56E622D741AB0039563F /* DataListner.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -286,8 +292,10 @@
 				12C6AD4C22D5ED9500BE9192 /* DataGetSet.swift in Sources */,
 				12C6AD3F22D5C38900BE9192 /* login.swift in Sources */,
 				12D5236D22D5AD1100CD374A /* LoginViewController.swift in Sources */,
+				12EC56E722D741AB0039563F /* DataListner.swift in Sources */,
 				12C6AD4522D5E16C00BE9192 /* TodoTableViewCell.swift in Sources */,
 				12EC56DF22D7112E0039563F /* EditToDoViewController.swift in Sources */,
+				12EC56E922D7505C0039563F /* InitialLoginViewController.swift in Sources */,
 				12C6AD3D22D5BEA300BE9192 /* SignUpViewController.swift in Sources */,
 				12C6AD4322D5DD9C00BE9192 /* TodoDataViewController.swift in Sources */,
 				12D5236B22D5AD1100CD374A /* AppDelegate.swift in Sources */,
