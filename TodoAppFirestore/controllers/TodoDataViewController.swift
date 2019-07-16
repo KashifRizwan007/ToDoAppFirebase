@@ -20,11 +20,16 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var boxView = UIView()
     var data:ToDo!
     var DataListnerObj = DataListner()
+    let EmptyView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.toDoTableView.delegate = self
+        self.toDoTableView.dataSource = self
+        self.toDoTableView.separatorColor = .black
+        self.toDoTableView.layoutMargins = UIEdgeInsets.zero
+        self.toDoTableView.separatorInset = UIEdgeInsets.zero
         self.loadData()
-        toDoTableView.tableFooterView = nil
         toDoTableView.rowHeight = UITableView.automaticDimension
         toDoTableView.estimatedRowHeight = 108
         toDoTableView.refreshControl = self.refreshControl
@@ -114,7 +119,7 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
         var numOfSection: NSInteger = 0
         
         if self.todoDataList != nil {
-            self.toDoTableView.tableFooterView = nil
+            self.toDoTableView.tableFooterView = UIView()
             numOfSection = 1
         } else {
             
@@ -134,6 +139,7 @@ class TodoDataViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoCell") as! TodoTableViewCell
+        cell.layoutMargins = UIEdgeInsets.zero
         cell.details.text = self.todoDataList[indexPath.row].description
         cell.title.text = self.todoDataList[indexPath.row].title
         cell.date.text = self.todoDataList[indexPath.row].date
