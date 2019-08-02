@@ -20,6 +20,7 @@ struct DataListner {
             }else{
                 var DataArray = [ToDo]()
                 for documents in snapshot!.documents{
+                    print(documents.data())
                     if let date = documents.data()["date"] as? String, let detail = documents.data()["detail"] as? String, let title = documents.data()["title"] as? String{
                         DataArray.append(ToDo(title: title, description: detail, date: date, uid: documents.documentID))
                     }
